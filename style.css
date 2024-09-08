@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #555;
+    transition: background-color 0.3s ease;
+}
+body.light-mode {
+    background-color: #f0f0f0;
+}
+
+.container.light-mode {
+    background: linear-gradient(145deg, #e0e0e0, #cfcfcf);
+    color: black;
+}
+.container{
+    background: linear-gradient(145deg, #00b4db, #0083b0);
+    padding: 40px;
+    border-radius: 20px;
+    color: white;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    max-width: 450px;
+    width: 100%;
+}
+.search{
+    display: flex;
+    margin-bottom: 20px;
+    align-items: center;
+}
+.search input{
+    padding: 15px;
+    border-radius: 50px;
+    border: none;
+    flex: 1;
+    outline: none;
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.1);
+}
+.search button{
+    background: #fff;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    margin-left: 10px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+.search button:hover{
+    transform: scale(1.1);
+}
+.search button img{
+    width: 20px;
+}
+.weather-icon{
+    width: 140px;
+    margin-top: 20px;
+    animation: bounce 1.5s infinite;
+}
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+.temp {
+    font-size: 3rem;
+    margin: 20px 0;
+}
+.city {
+    font-size: 1.5rem;
+}
+.details {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+.col {
+    display: flex;
+    align-items: center;
+    text-align: left;
+}
+.col img {
+    width: 30px;
+    margin-right: 10px;
+}
+.humidity, .wind {
+    font-size: 1.2rem;
+}
+.weather {
+    display: none;
+}
+.error {
+    display: none;
+}
+.theme-toggle {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+    align-items: center;
+    color: white;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+
+#modeText {
+    margin-left: 10px;
+}
